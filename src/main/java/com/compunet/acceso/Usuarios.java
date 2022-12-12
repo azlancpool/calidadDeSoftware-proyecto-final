@@ -5,63 +5,62 @@ import java.sql.ResultSet;
 
 public class Usuarios {
 
-    private int id_u;
-    private String usuario_u;
-    private String clave_u;
-    private String rol_u;
-    private String buscar_u;
-    private CBDD c;
+	private int idUsuario;
+	private String usuarioUsuario;
+	private String claveUsuario;
+	private String rolUsuario;
+	private String buscarUsuario;
+	private CBDD c;
 
-    public Usuarios() {
-        c = new CBDD();
-    }
+	public Usuarios() {
+		c = new CBDD();
+	}
 
-    public int getId_u() {
-        return id_u;
-    }
+	public int getIdUsuario() {
+		return idUsuario;
+	}
 
-    public void setId_u(int id_u) {
-        this.id_u = id_u;
-    }
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
-    public String getUsuario_u() {
-        return usuario_u;
-    }
+	public String getUsuarioUsuario() {
+		return usuarioUsuario;
+	}
 
-    public void setUsuario_u(String usuario_u) {
-        this.usuario_u = usuario_u;
-    }
+	public void setUsuarioUsuario(String usuarioUsuario) {
+		this.usuarioUsuario = usuarioUsuario;
+	}
 
-    public String getClave_u() {
-        return clave_u;
-    }
+	public String getClaveUsuario() {
+		return claveUsuario;
+	}
 
-    public void setClave_u(String clave_u) {
-        this.clave_u = clave_u;
-    }
+	public void setClaveUsuario(String claveUsuario) {
+		this.claveUsuario = claveUsuario;
+	}
 
-    public String getRol_u() {
-        return rol_u;
-    }
+	public String getRolUsuario() {
+		return rolUsuario;
+	}
 
-    public void setRol_u(String rol_u) {
-        this.rol_u = rol_u;
-    }
+	public void setRolUsuario(String rolUsuario) {
+		this.rolUsuario = rolUsuario;
+	}
 
-    public String getBuscar_u() {
-        return buscar_u;
-    }
+	public String getBuscarUsuario() {
+		return buscarUsuario;
+	}
 
-    public void setBuscar_u(String buscar_u) {
-        this.buscar_u = buscar_u;
-    }
+	public void setBuscarUsuario(String buscarUsuario) {
+		this.buscarUsuario = buscarUsuario;
+	}
 
-    public ResultSet verificarUsuario(String usuario, String clave) {
-        setUsuario_u(usuario);
-        setClave_u(clave);
-        String sql = "SELECT * FROM `usuario`\n"
-                + "WHERE `usuario_u` = '" + getUsuario_u() + "'\n"
-                + "and `clave_u` = SHA1('" + getClave_u() + "')";
-        return c.consulta(sql);
-    }
+	public ResultSet verificarUsuario(String usuario, String clave) {
+		setUsuarioUsuario(usuario);
+		setClaveUsuario(clave);
+		String sql = "SELECT * FROM `usuario`\n" + "WHERE `usuario_u` = '" + getUsuarioUsuario() + "'\n"
+				+ "and `clave_u` = SHA1('" + getClaveUsuario() + "')";
+		return c.consulta(sql);
+	}
 }
