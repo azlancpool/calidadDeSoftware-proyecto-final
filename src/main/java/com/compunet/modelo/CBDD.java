@@ -46,7 +46,8 @@ public class CBDD {
         return cnx;
     }
 
-    private Connection crearConexion() {
+    @SuppressWarnings("deprecation")
+	private Connection crearConexion() {
         try {
             Class.forName(getDriver()).newInstance();
             Connection con = DriverManager.getConnection(getCadena(), getUser(), getClave());

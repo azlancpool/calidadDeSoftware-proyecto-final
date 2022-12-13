@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@SuppressWarnings("serial")
 @WebServlet(name = "ClientesS", urlPatterns = "/ClientesS")
 public class ClientesServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("crud");
         if (menu.equals("sel")) {
@@ -29,12 +31,6 @@ public class ClientesServlet extends HttpServlet {
             //Delete
             deleteClientes(request, response);
         }
-
-    }
-
-    //Método POST: lo oculta, lo cifra, es más pesado (diferencia con Metodo GET
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        //doGet(request, response);
 
     }
 

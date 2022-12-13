@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@SuppressWarnings("serial")
 @WebServlet(name = "UsuariosS", urlPatterns = "/UsuariosS")
 public class UsuariosServlet extends HttpServlet{
     
+     @Override
      protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         //localhost:8080/POOII_JSF/UsuariosS?txtUsuario=admin&txtClave=admin
         verificarUsuarios(request, response);
